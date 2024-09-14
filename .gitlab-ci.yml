@@ -1,0 +1,53 @@
+# defines the stages of the pipeline
+stages:
+  - install
+  - build
+  - test
+
+# defines the install job for frontend dependencies
+install-frontend:
+  stage: install
+  image: node:14  # uses the Node.js 14 docker image
+  script:
+    - cd Frontend  # changes the directory to Frontend
+    - npm install  # installs Node.js dependencies
+  artifacts:
+    paths:
+      - Frontend/node_modules/  # stores the node_modules directory as an artifact to be used in the next stage
+
+# defines the build job for the frontend
+build-frontend:
+  stage: build
+  image: node:14  # uses the Node.js 14 docker image
+  dependencies:
+    - install-frontend  # ensures node_modules is available from the install-frontend job
+  script:
+    - cd Frontend  # changes the directory to Frontend/src
+    - CI=false npm run build  # runs the build command without treating warnings as errors
+  artifacts:
+    paths:
+      - Frontend/build/  # stores the build artifacts from the build directory
+
+# defines the build job for the backend
+build-backend:
+  stage: build
+  image: maven:3.8.6  # docker image with maven and JDK 17
+  script:
+    - cd Backend  # navigates to the backend project directory
+    - mvn clean package -DskipTests -Dmaven.compiler.release=17  # cleans, packages, and compiles with Java 17
+  artifacts:
+    paths:
+      - Backend/target/  # archives the 'target' directory containing built artifacts from the backend
+
+# defines the test job for the backend
+test-backend:
+  stage: test
+  image: maven:3.8.6
+  script:
+    - cd Backend  # navigates to the backend project directory
+    - mvn test -Dmaven.compiler.release=17  # runs tests with Java 17
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - Backend/target/surefire-reports/*.xml

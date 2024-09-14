@@ -1,0 +1,81 @@
+.account-name {
+    font-size: 16px; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Change cursor to pointer for clickable items */
+    color: #1677ee; /* Set link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.account-name:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+
+.account-name a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Other existing styles */
+body {
+    background-color: #fafafa;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.friend-list-container, .friend-requests-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.friends-list-card, .friend-requests-card {
+    width: 400px; /* Adjust width as needed */
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.no-requests {
+    font-size: 18px;
+    color: #888;
+}
+
+.friend-request-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.ant-btn-primary {
+    background-color: #3897f0;
+    border-color: #3897f0;
+}
+
+.ant-btn-primary:hover {
+    background-color: #287dc1;
+    border-color: #287dc1;
+}
+
+.ant-btn-danger {
+    background-color: #ff4d4f;
+    border-color: #ff4d4f;
+}
+
+.ant-btn-danger:hover {
+    background-color: #d9363e;
+    border-color: #d9363e;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.message {
+    color: red;
+    margin-top: 10px;
+}

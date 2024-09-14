@@ -1,0 +1,141 @@
+.post{
+    display: flex;
+    justify-content: center;
+    cursor: default;
+}
+
+.profile{
+    display: flex;
+}
+
+.post-header {
+    margin-top: 5%;
+}
+  
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.username:hover{
+    color: blue;
+}
+
+.post-options {
+    margin-left: auto;
+}
+
+.post-content {
+    display: flex;
+}
+
+.post-caption {
+    padding: 10px;
+}
+
+.post-actions {
+    display: flex;
+    padding: 10px;
+}
+
+.like-button,.comment-button,.share-button {
+    display: flex;
+    background-color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.like-button:hover,.comment-button:hover,.share-button:hover {
+    background-color: #f0f0f0;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar{
+    width: 60%;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.loading-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.post-content {
+    padding: 10px;
+}
+
+.filter-modal {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.filter-modal h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.filter-modal h3 {
+    margin-top: 20px;
+}
+
+.filter-modal div {
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.filter-modal div:hover {
+    background-color: #f0f0f0;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.filter-select .ant-select-selector {
+    text-align: left;
+}
+
+.filter-select .ant-select-selection-item {
+    text-align: left;
+}
+
+.filter-select .ant-select-dropdown {
+    text-align: left;
+}
